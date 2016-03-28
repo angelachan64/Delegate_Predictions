@@ -1,0 +1,26 @@
+body {
+    font-family: "century gothic", sans-serif;
+    background-color: #FFD1DC;
+}
+
+.chart div{
+    font: 10px sans-serif;
+    background-color: #B23535;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+    border: none;
+    /*display: inline-block;*/
+}
+
+.state div{
+    /*background-color: rgba(0,0,0,0);*/
+    background-color: #B23535;
+    font: 10px sans-serif;
+    text-align: left;
+    padding: 10px;
+    margin: 1px;
+    color: black;
+    border: none;
+}
