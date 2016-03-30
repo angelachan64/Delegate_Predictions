@@ -8,3 +8,7 @@
 
 <h2>How are we doing it?</h2>
 <p>We are constructing a horizontal bar graph separated by state. Each state bar will be separated into more columns for the candidates, and these subcolumns will be colored to represent the targeted number of delegates and the actual number of delegates (if the state has allocated their delegates yet).</p>
+
+<br><br><br>
+
+<p> NOTE: We used Cloud9 to code together. As a result, the amount of code it says we pushed may not be accurate. </p>
