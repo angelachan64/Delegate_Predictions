@@ -24,3 +24,7 @@ body {
     color: black;
     border: none;
 }
+
+.filler div{
+    visibility:none;
+}
