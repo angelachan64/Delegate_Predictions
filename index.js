@@ -1,13 +1,7 @@
 console.log("begin");
 
 var count = 0;
-var state_array = [];
-var result_array = [];
-var data_count = 0;
-var class_count = 0;
-var total_count = 0;
-var state_count = 0;
-var results_count = 0;
+var marginc = 1;
 
 d3.select("#chart")
   .selectAll("div")
@@ -24,26 +18,72 @@ d3.select("#chart")
       if(data==-1){
         return "block";
       } else{
-        return "inline";
+        return "";
       }
     })
-    .style("width", function(data){
-      console.log(data)
-      if(isNaN(data)){
-        return "100";
-      } else if(data==-1){
-        return "10";
-      } else{
-        return ""+7*data;
+    .style("height", function(data){
+      if(data==-1){
+        return "10px";
       }
     })
     .style("background-color", function(data){
       if(data==-1 || isNaN(data)){
         return "rgba(0, 0, 0, 0)";
       } else{
-        return "#B23535"
+        if(count%10==0){
+          count++;
+          return "#C999FF";
+        } else if (count%10==1){
+          count++;
+          return "#B23535";
+        } else{
+          return "#262626"
+        }
       }
     })
+    .style("color", function(data){
+      if(isNaN(data)){
+        return "#262626";
+      } else{
+        return "#FFFFFF";
+      }
+    })
+    .style("text-align", function(data){
+      if(isNaN(data)){
+        return "left";
+      } else{
+        return "right";
+      }
+    })
+    .style("font", function(data){
+      return "12px sans-serif"
+    })
+    .style("margin-top", function(data){
+      if(!isNaN(data) && data>-1){
+        if(marginc%2==0){
+          marginc++;
+          return "-px";
+        } else{
+          marginc++;
+          return "0px";
+        }
+      } else{
+        return "0px";
+      }
+    })
+    .style("width", function(data){
+      if(isNaN(data)){
+        var width="150px";
+        return width;
+      } else if(data==-1 || data==0){
+        width="10px";
+        return width;
+      } else {
+        console.log(data);
+        width = data * 7;
+        return width +"px";
+      }
+    });
 
 /*
 d3.select("#chart")
