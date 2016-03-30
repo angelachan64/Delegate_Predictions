@@ -30,14 +30,28 @@ d3.select("#chart")
       if(data==-1 || isNaN(data)){
         return "rgba(0, 0, 0, 0)";
       } else{
-        if(count%10==0){
+        if(count%2==0){
           count++;
           return "#C999FF";
         } else if (count%10==1){
           count++;
           return "#B23535";
-        } else{
-          return "#262626"
+        } else if (count%10==3){
+          count++;
+          return "#D86161";
+        } else if (count%10==5){
+          count++;
+          return "#FE9898";
+        } else if (count%10==7){
+          count++;
+          return "#4C88FF";
+        } else if (count%10==9){
+          count++;
+          return "#98BAFF";
+        }
+        else {
+          count++;
+          return "#262626";
         }
       }
     })
@@ -45,7 +59,11 @@ d3.select("#chart")
       if(isNaN(data)){
         return "#262626";
       } else{
-        return "#FFFFFF";
+        if(data==0){
+          return "#262626"
+        } else{
+          return "#FFFFFF";
+        }
       }
     })
     .style("text-align", function(data){
@@ -56,7 +74,16 @@ d3.select("#chart")
       }
     })
     .style("font", function(data){
-      return "12px sans-serif"
+      if(isNaN(data)){
+        return "10px sans-serif bold";
+      } else{
+        return "12px sans-serif";
+      }
+    })
+    .style("font-weight", function(data){
+      if(isNaN(data)){
+        return "bold";
+      }
     })
     .style("margin-top", function(data){
       if(!isNaN(data) && data>-1){
@@ -76,11 +103,11 @@ d3.select("#chart")
         var width="150px";
         return width;
       } else if(data==-1 || data==0){
-        width="10px";
+        width="0px";
         return width;
       } else {
         console.log(data);
-        width = data * 7;
+        width = data * 5.2;
         return width +"px";
       }
     });
