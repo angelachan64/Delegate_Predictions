@@ -29,3 +29,16 @@ body {
 .filler div{
     visibility:none;
 }
+
+a{
+    color:#262626;
+}
+
+a:hover{
+    color:#4C4C4C;
+}
+
+p{
+    font: 13px sans-serif;
+    width: 500px;
+}
